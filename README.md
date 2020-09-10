@@ -10,8 +10,15 @@ No installation necessary, just import objects from base.py into your python fil
 
 #### Setting Up and Running a Problem
 Subclass base.LeetCodeProblem class to use the library.  
-A template.py is provided, simply copy and rename from template is usually all you'll need.   
-See examples.py for details.  
+A template.py is provided, simply copy and rename from template is usually all you'll need.  
+
+step-by-step user guide:  
+**see example.py for code example**
+1. inherent from this LeetCodeProblem class
+2. override get_tests to return a tuple of test cases
+3. override solution function with the body of your solution
+4. make a new instance of your class and call instance.run()
+5. (optional) instance.print_result can be called repeatedly, this can be useful in ipython (maybe)  
 
 #### Testers
 Tester functions govern how output of a solution is checked against the expected case.  
