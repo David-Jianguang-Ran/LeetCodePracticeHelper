@@ -39,7 +39,7 @@ class YourClass(LeetCodeProblem):
     tester = "all"    
     
     # define your tester here
-    @make_tester(LeetCodeProblem.__testers, key="all")
+    @make_tester(LeetCodeProblem._testers, key="all")
     def many_to_many(self, truth, result):
         if not isinstance(result, (list, tuple)):
             raise TypeError("expected output must be a list or tuple")
