@@ -152,6 +152,30 @@ class LeetCodeProblem:
                 if right:
                     right = right.next
 
+    @make_tester(_testers, key="object")
+    def method_calls(self, expected: list, instance):
+        """
+        in order to use this tester the solution must
+        1. take arguments for yourclass.init
+        2. return instance of your class
+
+        this tester requires specific test case structure:
+        `( (init_args, ) , [(method_name, *args,)], [results] ) `
+        note that expected must be a list, not a tuple
+        its sort of a hacky mess i know (:P)
+        """
+        calls, expected_results = expected
+
+        # call each method specified and collect results in a list
+        working_results = [getattr(instance, each_call[0])(*each_call[1:]) for each_call in calls]
+
+        # this is a hideous hack !
+        # modifying expected to pass error data back
+        if working_results != expected_results:
+            expected[1] = working_results
+            expected[0] = expected_results
+            raise AssertionError
+
 
 ##
 # linked list utility
