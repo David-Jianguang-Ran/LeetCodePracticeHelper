@@ -28,6 +28,7 @@ Here are some available testers:
 - "any" : output must match one element in expected, expected must be a list or tuple  
 - "all" : output must have same elements as expected, expected must be a list or tuple  
 - "linked_lists" : output must have same val element-wise as expected, both output and expected needs to be head ListNode    
+- "object" : please see excercises/example_oo.py for details
 
 You can also expand on the library by implementing your own testers and selecting it.  
 Here is an example:
