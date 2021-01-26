@@ -56,3 +56,24 @@ __base.to_linked_list__ (plist : list) -> ListNode:
 
 __base.to_plist__ (head : ListNode) -> list: 
 """scans from head onwards, returns python list"""
+
+#### Bonus: Function return caching  
+You can use this decorator to cache the return of a specific function so that result is only computed once for each unique arg  
+Note: caching functions with kwargs is not supported at the moment
+
+__base.cached__ (__cache : dict) -> python function decorator:  
+"""cache returns of decorated function in __cache, decoratee function can only have args not kwargs"""  
+example:  
+```python
+from base import cached
+
+# declare a dictionary as a cache
+cache = {}
+
+# define your function and decorate with base.cached
+@cached(cache)
+def factorial(number):
+    return factorial(number - 1) * number
+
+# enjoy!
+```

@@ -1,10 +1,15 @@
 """
 This program contains:
+**in this file**
 - a base class LeetCodeProblem with utilities for testing
-
+**in utils**
 - a basic linked list implementation and conversion utility
+- a function call caching decorator (obviously pure functions only)
+- a python implementation of min heap
 """
 import time
+
+from utils import *
 
 
 ##
@@ -176,44 +181,6 @@ class LeetCodeProblem:
             expected[0] = expected_results
             raise AssertionError
 
-
-##
-# linked list utility
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-    def __repr__(self):
-        return f"ListNode:{self.val}"
-
-
-def to_linked_list(plist):
-    """takes python list and return head of linked list"""
-    if len(plist) == 0:
-        return None
-
-    head = ListNode(plist[0])
-    tail = head
-
-    for val in plist[1:]:
-        current = ListNode(val)
-        tail.next = current
-        tail = current
-
-    return head
-
-
-def to_plist(head):
-    """scans from head onwards, returns python list"""
-    plist = [head.val]
-    current = head
-
-    while current.next:
-        plist.append(current.next.val)
-        current = current.next
-
-    return plist
 
 
 if __name__ == "__main__":
