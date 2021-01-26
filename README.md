@@ -1,7 +1,7 @@
 # LeetCode Practice Helper
 
 A simple python program for running tests on algorithm challenge solutions.  
-Here is a [Demo notebook](https://colab.research.google.com/drive/1vFVt4oCTFH0uDCe9plyxda5ZVEequPB1#scrollTo=OzcHByeaeGWx) 
+Here is a [Demo notebook](https://colab.research.google.com/drive/1vFVt4oCTFH0uDCe9plyxda5ZVEequPB1?usp=sharing) 
 hosted on Google Colab
 
 ## Guide:
